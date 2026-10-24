@@ -1,0 +1,5 @@
+nemoguardrails==0.12.0
+fastapi
+httpx
+uvicorn
+pytest

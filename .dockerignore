@@ -1,0 +1,13 @@
+.git
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+**/.runtime
+**/test-results
+**/playwright-report
+**/*.tsbuildinfo
+**/*.sqlite3
+.env
+.venv
+docs/stage-*-files.md

@@ -1,0 +1,277 @@
+{
+  "profile": "client",
+  "name": "Client-Facing Assistant",
+  "version": 1,
+  "system_prompt": "You are Northbridge Financial\u2019s client assistant. Provide general product information, never personalised investment recommendations.",
+  "allowed_topics": [
+    "bank",
+    "savings",
+    "investment",
+    "fees",
+    "account",
+    "financial",
+    "products"
+  ],
+  "allowed_roles": [
+    "client"
+  ],
+  "disclosure": "Capital is at risk. This is general information, not personal advice.",
+  "mapping_notice": "Illustrative, not legal advice",
+  "rules": [
+    {
+      "id": "IN-01",
+      "description": "Sensitive data",
+      "stage": "input",
+      "enabled": true,
+      "severity": "high",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "UK GDPR / GDPR",
+          "explanation": "Data minimisation limits personal data sent to models."
+        }
+      ]
+    },
+    {
+      "id": "IN-02",
+      "description": "Prompt injection",
+      "stage": "input",
+      "enabled": true,
+      "severity": "high",
+      "action": "block",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "DORA",
+          "explanation": "Input controls illustrate operational resilience; this is not a DORA compliance test."
+        }
+      ]
+    },
+    {
+      "id": "IN-03",
+      "description": "Scope and intent",
+      "stage": "input",
+      "enabled": true,
+      "severity": "high",
+      "action": "block",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "FCA Consumer Duty",
+          "explanation": "Scope controls can support appropriate retail outcomes where the Duty applies."
+        }
+      ]
+    },
+    {
+      "id": "IN-04",
+      "description": "MNPI screening",
+      "stage": "input",
+      "enabled": true,
+      "severity": "high",
+      "action": "escalate",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "UK MAR / EU MAR",
+          "explanation": "Restrict use and disclosure of potential inside information."
+        }
+      ]
+    },
+    {
+      "id": "IN-05",
+      "description": "Access control",
+      "stage": "input",
+      "enabled": true,
+      "severity": "high",
+      "action": "block",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "UK GDPR / GDPR",
+          "explanation": "Restrict disclosure to authorised roles."
+        }
+      ]
+    },
+    {
+      "id": "OUT-01",
+      "description": "Misleading promises",
+      "stage": "output",
+      "enabled": true,
+      "severity": "high",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "FCA COBS / SEC Marketing Rule",
+          "explanation": "Fair communications; the SEC mapping applies only to covered adviser advertising."
+        }
+      ]
+    },
+    {
+      "id": "OUT-02",
+      "description": "Advice boundary",
+      "stage": "output",
+      "enabled": true,
+      "severity": "high",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "MiFID II / FCA advice perimeter",
+          "explanation": "Personal recommendations may require permissions and suitability assessment."
+        }
+      ]
+    },
+    {
+      "id": "OUT-03",
+      "description": "Grounding figures",
+      "stage": "output",
+      "enabled": true,
+      "severity": "high",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "SR 11-7",
+          "explanation": "Validation and source checking illustrate model risk management."
+        }
+      ]
+    },
+    {
+      "id": "OUT-04",
+      "description": "Research citations",
+      "stage": "output",
+      "enabled": false,
+      "severity": "medium",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "SR 11-7",
+          "explanation": "Evidence supports review of model outputs."
+        }
+      ]
+    },
+    {
+      "id": "OUT-05",
+      "description": "Disclosures",
+      "stage": "output",
+      "enabled": true,
+      "severity": "medium",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "EU AI Act / FCA COBS",
+          "explanation": "Transparency notices support informed use; obligations depend on deployment."
+        }
+      ]
+    },
+    {
+      "id": "OUT-06",
+      "description": "Vulnerability",
+      "stage": "output",
+      "enabled": true,
+      "severity": "high",
+      "action": "escalate",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "FCA Consumer Duty",
+          "explanation": "Support potentially vulnerable retail customers and human intervention."
+        }
+      ]
+    },
+    {
+      "id": "OUT-07",
+      "description": "Confidentiality",
+      "stage": "output",
+      "enabled": true,
+      "severity": "high",
+      "action": "block",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "UK GDPR / GDPR",
+          "explanation": "Prevent unauthorised personal-data disclosure."
+        }
+      ]
+    },
+    {
+      "id": "OUT-08",
+      "description": "Fairness",
+      "stage": "output",
+      "enabled": false,
+      "severity": "high",
+      "action": "escalate",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "Equality Act 2010 / EU AI Act",
+          "explanation": "Protected-characteristic reasoning needs review; credit scoring may be high risk."
+        }
+      ]
+    },
+    {
+      "id": "OUT-09",
+      "description": "AML tipping-off",
+      "stage": "output",
+      "enabled": false,
+      "severity": "high",
+      "action": "block",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "UK POCA / AML financial crime rules",
+          "explanation": "Avoid customer communications that could constitute tipping off."
+        }
+      ]
+    },
+    {
+      "id": "OUT-10",
+      "description": "Explainability",
+      "stage": "output",
+      "enabled": false,
+      "severity": "medium",
+      "action": "modify",
+      "thresholds": {
+        "min_matches": 1
+      },
+      "regulations": [
+        {
+          "reference": "EU AI Act / SR 11-7",
+          "explanation": "Record decision factors and support meaningful human oversight."
+        }
+      ]
+    }
+  ]
+}

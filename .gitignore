@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+*.sqlite3
+.env
+.venv/
+
+.runtime/
+node_modules/
+dist/
+*.tsbuildinfo
+playwright-report/
+test-results/

@@ -1,0 +1,10 @@
+define flow inspect input
+  $checked = execute finguard_input
+  $user_message = $checked.text
+  if $checked.terminal
+    bot $checked.text
+    stop
+
+define flow inspect output
+  $checked = execute finguard_output
+  $bot_message = $checked.text

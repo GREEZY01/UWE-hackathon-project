@@ -1,0 +1,13 @@
+[
+  {
+    "id": "NB-CASE-01",
+    "fictional": true,
+    "name": "case alpha",
+    "amount": "GBP 1,200",
+    "factors": [
+      "unverified source of funds",
+      "missing identity evidence"
+    ],
+    "decision": "human review required"
+  }
+]

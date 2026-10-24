@@ -1,0 +1,83 @@
+{
+  "fictional": true,
+  "products": [
+    {
+      "id": "easy_saver",
+      "name": "Northbridge Easy Saver",
+      "rate": "4.6%",
+      "annual_fee": "GBP 0"
+    },
+    {
+      "id": "fixed_saver",
+      "name": "Northbridge Fixed Saver",
+      "rate": "4.8%",
+      "term": "12 months"
+    },
+    {
+      "id": "current",
+      "name": "Northbridge Current Account",
+      "monthly_fee": "GBP 5"
+    },
+    {
+      "id": "isa",
+      "name": "Northbridge Investment ISA",
+      "annual_fee": "0.35%"
+    },
+    {
+      "id": "balanced_fund",
+      "name": "Northbridge Balanced Fund",
+      "past_return": "6.2%",
+      "annual_fee": "0.75%"
+    }
+  ],
+  "facts": [
+    {
+      "profile": [
+        "client",
+        "research"
+      ],
+      "entity": "easy saver",
+      "value": "4.6",
+      "unit": "percent",
+      "source": "NB-PRODUCTS"
+    },
+    {
+      "profile": [
+        "client",
+        "research"
+      ],
+      "entity": "fixed saver",
+      "value": "4.8",
+      "unit": "percent",
+      "source": "NB-PRODUCTS"
+    },
+    {
+      "profile": [
+        "client",
+        "research"
+      ],
+      "entity": "investment isa",
+      "value": "0.35",
+      "unit": "percent",
+      "source": "NB-PRODUCTS"
+    },
+    {
+      "profile": [
+        "research"
+      ],
+      "entity": "balanced fund",
+      "value": "6.2",
+      "unit": "percent",
+      "source": "NB-RESEARCH-01"
+    },
+    {
+      "profile": [
+        "compliance"
+      ],
+      "entity": "case alpha",
+      "value": "1200",
+      "unit": "GBP",
+      "source": "NB-CASE-01"
+    }
+  ]
+}

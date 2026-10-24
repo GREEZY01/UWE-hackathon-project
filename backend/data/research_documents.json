@@ -1,0 +1,30 @@
+[
+  {
+    "id": "NB-PRODUCTS",
+    "fictional": true,
+    "roles": [
+      "client",
+      "analyst",
+      "compliance_officer",
+      "staff"
+    ],
+    "text": "Easy Saver has a 4.6% illustrative rate. Fixed Saver has a 4.8% illustrative rate. Investment ISA annual fee is 0.35%."
+  },
+  {
+    "id": "NB-RESEARCH-01",
+    "fictional": true,
+    "roles": [
+      "analyst"
+    ],
+    "text": "Balanced Fund past return is 6.2%. Past performance is not a reliable indicator of future results."
+  },
+  {
+    "id": "NB-RESTRICTED-01",
+    "fictional": true,
+    "roles": [
+      "compliance_officer"
+    ],
+    "restricted": true,
+    "text": "Restricted fictional case review. No customer disclosure."
+  }
+]
